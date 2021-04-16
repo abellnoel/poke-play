@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PokePlay</string>
+    <!-- TITLE SCREEN -->
+    <string name="start">TAP TO START</string>
+    <string name="online">ONLINE</string>
+    <string name="options">OPTIONS</string>
+
+    <color name="background">#288cd4</color>
 </resources>
