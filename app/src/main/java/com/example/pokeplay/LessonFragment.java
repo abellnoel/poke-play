@@ -19,10 +19,26 @@ public class LessonFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().setTitle("Lessons");
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_lesson, container, false);
+
+        v.findViewById(R.id.textViewType).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction()
+                        .addToBackStack("Lessons")
+                        .replace(R.id.canvas, new TypeFragment())
+                        .commit();
+            }
+        });
 
         return v;
     }
