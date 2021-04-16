@@ -8,32 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HomeFragment extends Fragment {
-    public HomeFragment() {
+public class LessonFragment extends Fragment {
+    public LessonFragment() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle("Home");
+        getActivity().setTitle("Lessons");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-
-        v.findViewById(R.id.textViewStart).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.canvas, new LessonFragment())
-                        .addToBackStack("Home")
-                        .commit();
-            }
-        });
+        View v = inflater.inflate(R.layout.fragment_lesson, container, false);
 
         return v;
     }

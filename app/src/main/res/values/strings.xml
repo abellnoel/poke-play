@@ -4,6 +4,6 @@
     <string name="start">TAP TO START</string>
     <string name="online">ONLINE</string>
     <string name="options">OPTIONS</string>
-
-    <color name="background">#288cd4</color>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
