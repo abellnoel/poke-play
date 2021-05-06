@@ -44,7 +44,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 getFragmentManager().beginTransaction()
                         .replace(R.id.canvas, new LessonFragment())
-                        .addToBackStack("Home")
+                        .addToBackStack("Start")
+                        .commit();
+            }
+        });
+        v.findViewById(R.id.textViewOnline).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.canvas, new TeamFragment())
+                        .addToBackStack("Team")
                         .commit();
             }
         });
