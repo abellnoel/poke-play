@@ -1,14 +1,22 @@
 package com.example.pokeplay;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+@RequiresApi(api = Build.VERSION_CODES.N)
 public class HomeFragment extends Fragment {
+    Spanned TITLE_TEXT = Html.fromHtml("<font color=#e94337>POKE</font><font color=#ffffff>PLAY</font>", Html.FROM_HTML_MODE_LEGACY);
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -40,6 +48,10 @@ public class HomeFragment extends Fragment {
                         .commit();
             }
         });
+
+        TextView title = v.findViewById(R.id.textViewTitle);
+        title.setText(TITLE_TEXT);
+        title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         return v;
     }

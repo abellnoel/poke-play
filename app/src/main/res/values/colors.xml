@@ -11,4 +11,6 @@
     <color name="buttonBackground">#0F64A1</color>
     <color name="buttonText">#D1D8DF</color>
     <color name="topbar">#0F64A1</color>
+    <color name="Poke">#FFFFFF</color>
+    <color name="Play">#e94337</color>
 </resources>
