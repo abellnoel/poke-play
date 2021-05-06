@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#288cd4</color>
-    <color name="buttonBackground">#edd418</color>
+    <color name="buttonBackground">#0F64A1</color>
+    <color name="buttonText">#D1D8DF</color>
+    <color name="topbar">#0F64A1</color>
 </resources>

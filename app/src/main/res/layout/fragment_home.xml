@@ -23,12 +23,18 @@
 
     <TextView
         android:id="@+id/textViewStart"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
+        android:gravity="center"
         android:text="@string/start"
-        android:textColor="@color/white"
+        android:textColor="@color/buttonText"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewOnline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,12 +42,18 @@
 
     <TextView
         android:id="@+id/textViewOnline"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
+        android:gravity="center"
         android:text="@string/online"
-        android:textColor="@color/white"
+        android:textColor="@color/buttonText"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewOptions"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +61,18 @@
 
     <TextView
         android:id="@+id/textViewOptions"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
+        android:gravity="center"
         android:text="@string/options"
-        android:textColor="@color/white"
+        android:textColor="@color/buttonText"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +86,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

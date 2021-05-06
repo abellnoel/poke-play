@@ -29,7 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lessons" />
+        app:srcCompat="@drawable/lessons"
+        />
 
     <TextView
         android:id="@+id/textViewType"
@@ -39,20 +40,17 @@
         android:layout_marginLeft="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
         android:text="Type Dynamics"
+        android:textColor="@color/buttonText"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewAbility"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" /><![CDATA[/>
-
-    />
-
-    ]]>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textViewAbility"
@@ -63,7 +61,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -72,7 +70,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewType" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewType"
+        android:textColor="@color/buttonText"/>
 
     <TextView
         android:id="@+id/textViewItem"
@@ -83,7 +82,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -92,7 +91,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAbility" />/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewAbility"
+        android:textColor="@color/buttonText"/>
 
     <TextView
         android:id="@+id/textViewIVEV"
@@ -103,7 +103,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -112,7 +112,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewItem" />/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewItem"
+        android:textColor="@color/buttonText"/>
 
     <TextView
         android:id="@+id/textViewTeam"
@@ -123,7 +124,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -132,7 +133,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewIVEV" />/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewIVEV"
+        android:textColor="@color/buttonText"/>
 
     <TextView
         android:id="@+id/textViewField"
@@ -143,7 +145,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -152,7 +154,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTeam" />/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam"
+        android:textColor="@color/buttonText"/>
 
     <TextView
         android:id="@+id/textViewWin"
@@ -163,7 +166,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/buttonBackground"
+        android:background= "@drawable/round_button"
         android:fontFamily="@font/odinr"
         android:gravity="end"
         android:paddingHorizontal="25dp"
@@ -172,7 +175,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewField" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewField"
+        android:textColor="@color/buttonText"/>
 
     <ImageView
         android:id="@+id/imageView3"
