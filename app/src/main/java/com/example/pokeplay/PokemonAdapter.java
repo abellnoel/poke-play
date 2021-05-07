@@ -11,13 +11,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHolder>{
-    private String[] localDataSet= {"Poke1", "Poke2"} ;
-
-    public PokemonAdapter() {
-    }
-
+    private String[] localDataSet;
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView name;
         private final ImageView icon;
@@ -38,12 +47,6 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
             return icon;
         }
     }
-
-    //Initialize the dataset of the Adapter.
-    public PokemonAdapter(String[] dataSet) {
-        localDataSet = dataSet;
-    }
-
     // Create new views (invoked by the layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {

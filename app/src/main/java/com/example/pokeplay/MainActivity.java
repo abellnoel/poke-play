@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Open pokemon search fragment
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.canvas, new ChooseFragment())
+                .replace(R.id.canvas, new ChooseFragment())
                 .addToBackStack("Team")
                 .commit();
     }
