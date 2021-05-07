@@ -57,6 +57,7 @@ public class ChooseFragment extends Fragment {
         TextView typesText = v.findViewById(R.id.textViewTypes);
 
         //search for pokemon
+        final Pokemon[] chosenPokemon = new Pokemon[1];
         v.findViewById(R.id.buttonSearch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +95,11 @@ public class ChooseFragment extends Fragment {
                                     }
                                     //change text view to typeString
                                     typesText.setText(typeString);
+
+                                    //get pokemon url
+                                    String pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+                                    //If all retrievals work, create pokemon object
+                                    chosenPokemon[0] = new Pokemon(pokemonName, typeString, url, pokeUrl);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -115,14 +121,46 @@ public class ChooseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //pass pokemon selection back to CreateTeamFragment
-
-                getFragmentManager().popBackStack();
+                if (chosenPokemon[0] != null) {
+                    listener.onPokemonChosen(chosenPokemon[0], slot);
+                    getFragmentManager().popBackStack();
+                }
+                else {
+                    Toast.makeText(getActivity(), "No Pokemon chosen, please use the search bar above.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
 
         return v;
     }
+
+    //DATA PASSING
+    int slot;
+    public void setSlot(int slot) {
+        this.slot = slot;
+    }
+
+    private ChooseFragmentListener listener;
+    public interface ChooseFragmentListener {
+        void onPokemonChosen(Pokemon pokemon, int slot);
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof ChooseFragmentListener) {
+            listener = (ChooseFragmentListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement ChooseFragmentListener");
+        }
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
 
     //hide keyboard on search
     public void dismissKeyboard(Activity activity) {

@@ -36,7 +36,7 @@ public class TeamFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.canvas, new CreateTeamFragment())
+                        .replace(R.id.canvas, new CreateTeamFragment(), "CreateTeam")
                         .addToBackStack("NewTeam")
                         .commit();
             }

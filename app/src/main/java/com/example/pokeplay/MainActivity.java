@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ChooseFragment.ChooseFragmentListener, CreateTeamFragment.CreateTeamFragmentListener {
+    private CreateTeamFragment teamFragment;
+    private ChooseFragment chooseFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -29,10 +31,22 @@ public class MainActivity extends AppCompatActivity {
         int slotNum = view.getId();
         ImageButton pokeSlot = findViewById(slotNum);
 
-        //Open pokemon search fragment
+        chooseFragment = new ChooseFragment();
+        teamFragment = (CreateTeamFragment) getSupportFragmentManager().findFragmentByTag("CreateTeam");
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.canvas, new ChooseFragment())
+                .replace(R.id.canvas, chooseFragment)
                 .addToBackStack("Team")
                 .commit();
+        teamFragment.listener.onSlotSent(slotNum);
+    }
+
+    //FOR DATA PASSING
+    @Override
+    public void onPokemonChosen(Pokemon pokemon, int slot) {
+        teamFragment.updateTeam(pokemon, slot);
+    }
+    @Override
+    public void onSlotSent(int slot) {
+        chooseFragment.setSlot(slot);
     }
 }
