@@ -6,7 +6,7 @@
     <string name="options">OPTIONS</string>
 
     <string name="lesson_type1">Welcome to Type Dynamics, this lesson will take every Pokemon Typing and show you how they all interact amongst each other. We will discuss dual typings, move typings, immunities, super-effective and not very effective attacks.\n\nIn Pokemon Battles Type understanding and memorization are key to knowing how moves will interact with your Pokemon and your opponents Pokemon. Let\'s Get Started!</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="team_builder">Team Builder</string>
     <string name="create_new_team">Create New Team</string>

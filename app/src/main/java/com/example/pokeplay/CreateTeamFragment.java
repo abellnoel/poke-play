@@ -3,10 +3,12 @@ package com.example.pokeplay;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.transition.TransitionInflater;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class CreateTeamFragment extends Fragment {
     public CreateTeamFragment() {
@@ -17,6 +19,10 @@ public class CreateTeamFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Set transitions
+        TransitionInflater tInflater = TransitionInflater.from(requireContext());
+        setEnterTransition(tInflater.inflateTransition(R.transition.slide_in));
+        setExitTransition(tInflater.inflateTransition(R.transition.fade));
     }
 
     @Override
@@ -30,6 +36,7 @@ public class CreateTeamFragment extends Fragment {
             public void onClick(View v) {
                 //TODO: Save team data to database
 
+                Toast.makeText(getActivity(), "Team created!", Toast.LENGTH_SHORT).show();
                 //Back to teams page
                 getFragmentManager().popBackStack();
             }

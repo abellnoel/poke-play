@@ -3,6 +3,7 @@ package com.example.pokeplay;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.transition.TransitionInflater;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,11 @@ public class LessonFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle("Lessons");
+
+        //Set transitions
+        TransitionInflater tInflater = TransitionInflater.from(requireContext());
+        setEnterTransition(tInflater.inflateTransition(R.transition.slide_in));
+        setExitTransition(tInflater.inflateTransition(R.transition.fade));
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.example.pokeplay;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.transition.TransitionInflater;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,11 @@ public class TypeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle("Type Dynamics");
+
+        //Set transitions
+        TransitionInflater tInflater = TransitionInflater.from(requireContext());
+        setEnterTransition(tInflater.inflateTransition(R.transition.slide_in));
+        setExitTransition(tInflater.inflateTransition(R.transition.fade));
     }
 
     @Override
@@ -29,6 +35,8 @@ public class TypeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_type, container, false);
+        View v = inflater.inflate(R.layout.fragment_type, container, false);
+
+        return v;
     }
 }

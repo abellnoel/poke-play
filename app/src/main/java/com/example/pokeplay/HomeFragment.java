@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.transition.TransitionInflater;
 
 import android.text.Html;
 import android.text.Spanned;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class HomeFragment extends Fragment {
@@ -25,6 +27,11 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle("Home");
+
+        //Set transitions
+        TransitionInflater tInflater = TransitionInflater.from(requireContext());
+        setEnterTransition(tInflater.inflateTransition(R.transition.slide_in));
+        setExitTransition(tInflater.inflateTransition(R.transition.fade));
     }
 
     @Override
