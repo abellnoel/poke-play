@@ -32,7 +32,7 @@ public class TeamFragment extends Fragment {
 
         //TODO: Show all teams created in database
 
-        v.findViewById(R.id.buttonCreateTeam).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.buttonChoose).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction()

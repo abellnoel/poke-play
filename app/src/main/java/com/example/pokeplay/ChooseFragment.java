@@ -1,5 +1,6 @@
 package com.example.pokeplay;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,8 +51,10 @@ public class ChooseFragment extends Fragment {
                              Bundle savedInstanceState) {
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         View v = inflater.inflate(R.layout.fragment_choose_list, container, false);
+        TextView pokeName = v.findViewById(R.id.textViewPokeName);
         TextView searchBar = v.findViewById(R.id.editTextSearch);
         ImageView picture = v.findViewById(R.id.imageViewPicture);
+        TextView typesText = v.findViewById(R.id.textViewTypes);
 
         //search for pokemon
         v.findViewById(R.id.buttonSearch).setOnClickListener(new View.OnClickListener() {
@@ -70,9 +74,26 @@ public class ChooseFragment extends Fragment {
                                     //show image
                                     JSONObject sprites = pokemon.getJSONObject("sprites");
                                     String url = sprites.getJSONObject("other")
-                                                        .getJSONObject("official-artwork")
-                                                        .getString("front_default");
+                                            .getJSONObject("official-artwork")
+                                            .getString("front_default");
                                     Picasso.get().load(url).into(picture);
+                                    pokeName.setText(pokemonName.toUpperCase());
+
+                                    //show types
+                                    String typeString = "";
+                                    JSONArray types = pokemon.getJSONArray("types");
+                                    for (int i = 0; i < types.length(); i++) {
+                                        JSONObject slot = types.getJSONObject(i);
+                                        JSONObject type = slot.getJSONObject("type");
+                                        String typeName = type.getString("name");
+                                        typeString += typeName.toUpperCase();
+                                        //make comma separated if not last type
+                                        if (i != types.length() - 1) {
+                                            typeString += ", ";
+                                        }
+                                    }
+                                    //change text view to typeString
+                                    typesText.setText(typeString);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -84,6 +105,18 @@ public class ChooseFragment extends Fragment {
                     }
                 });
                 queue.add(pokemonRequest);
+                //hide keyboard when search button is presed
+                dismissKeyboard(getActivity());
+            }
+        });
+
+        //Confirm selection
+        v.findViewById(R.id.buttonChoose).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //pass pokemon selection back to CreateTeamFragment
+
+                getFragmentManager().popBackStack();
             }
         });
 
@@ -91,31 +124,11 @@ public class ChooseFragment extends Fragment {
         return v;
     }
 
-    private JSONObject getPokemon(String pokemonName, RequestQueue queue) {
-        String pokemonUrl = "/pokemon/";
-        String baseUrl = "https://pokeapi.co/api/v2";
-        String url = baseUrl + pokemonUrl + pokemonName;
-        final JSONObject[] pokemon = new JSONObject[1];
-
-        StringRequest pokemonRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            pokemon[0] = new JSONObject(response);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.print("Something went wrong while retrieving a Pokemon.");
-            }
-        });
-
-        queue.add(pokemonRequest);
-
-        return pokemon[0];
+    //hide keyboard on search
+    public void dismissKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (null != activity.getCurrentFocus())
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus()
+                    .getApplicationWindowToken(), 0);
     }
 }
