@@ -31,7 +31,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/odinr"
-        android:text="@string/create"
+        android:text="Complete!\n(Remember to take a Screenshot)"
         android:textSize="18sp"
         app:backgroundTint="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,5 +123,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/poke2"
         android:onClick="pokeSelect"/>
+
+    <TextView
+        android:id="@+id/tvpoke1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/poke1"
+        app:layout_constraintEnd_toEndOf="@+id/poke1"
+        app:layout_constraintStart_toStartOf="@+id/poke1" />
+
+    <TextView
+        android:id="@+id/tvpoke2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/poke1"
+        app:layout_constraintEnd_toEndOf="@+id/poke2"
+        app:layout_constraintStart_toStartOf="@+id/poke2" />
+
+    <TextView
+        android:id="@+id/tvpoke3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/poke1"
+        app:layout_constraintEnd_toEndOf="@+id/poke3"
+        app:layout_constraintStart_toStartOf="@+id/poke3" />
+
+    <TextView
+        android:id="@+id/tvpoke5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/poke5"
+        app:layout_constraintStart_toStartOf="@+id/poke2"
+        app:layout_constraintTop_toBottomOf="@+id/poke5" />
+
+    <TextView
+        android:id="@+id/tvpoke6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/poke6"
+        app:layout_constraintStart_toStartOf="@+id/poke6"
+        app:layout_constraintTop_toBottomOf="@+id/poke5" />
+
+    <TextView
+        android:id="@+id/tvpoke4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/odinr"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/poke4"
+        app:layout_constraintStart_toStartOf="@+id/poke4"
+        app:layout_constraintTop_toBottomOf="@+id/poke5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
