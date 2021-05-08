@@ -15,13 +15,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class TypeQuizFragment extends Fragment {
+public class AbilityQuizFragment extends Fragment {
     TextView ansA, ansB, ansC, ansD, Q;
     Button a, b, c, d, next;
     int correct = 0;
     boolean answered = false;
 
-    public TypeQuizFragment() {
+    public AbilityQuizFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class TypeQuizFragment extends Fragment {
 
         //create questions
         ArrayList<Question> qs = new ArrayList<>();
-        Question q1 = new Question("Which type below is fire super effective against?", "Water", "Grass","Electric", "Ground", 1);
-        Question q2 = new Question("Which type below is water super effective against?", "Water", "Electric","Grass", "Fire", 1);
+        Question q1 = new Question("Which dawdawda", "Water", "Grass","Electric", "Ground", 1);
+        Question q2 = new Question("Which type beloawdwadive against?", "Water", "Electric","Grass", "Fire", 1);
         qs.add(q1);
         qs.add(q2);
 
@@ -63,7 +63,6 @@ public class TypeQuizFragment extends Fragment {
         final Question[] curr = {qs.get(prog[0])};
         final int[] finalCorrectID = {setQuestion(curr[0])};
 
-
         a.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -74,7 +73,7 @@ public class TypeQuizFragment extends Fragment {
                         a.setBackgroundColor(Color.GREEN);
                         correct++;
                         answered = true;
-                        if (prog[0] >= qs.size() -1) {
+                        if (prog[0] >= qs.size() - 1) {
                             next.setText("Finish!");
                         }
                     } else {
@@ -93,7 +92,7 @@ public class TypeQuizFragment extends Fragment {
                         b.setBackgroundColor(Color.GREEN);
                         correct++;
                         answered = true;
-                        if (prog[0] >= qs.size() -1) {
+                        if (prog[0] >= qs.size() - 1) {
                             next.setText("Finish!");
                         }
                     } else {
@@ -113,7 +112,7 @@ public class TypeQuizFragment extends Fragment {
                         c.setBackgroundColor(Color.GREEN);
                         correct++;
                         answered = true;
-                        if (prog[0] >= qs.size() -1) {
+                        if (prog[0] >= qs.size() - 1) {
                             next.setText("Finish!");
                         }
                     } else {
@@ -133,7 +132,7 @@ public class TypeQuizFragment extends Fragment {
                         next.setVisibility(View.VISIBLE);
                         correct++;
                         answered = true;
-                        if (prog[0] >= qs.size() -1) {
+                        if (prog[0] >= qs.size() - 1) {
                             next.setText("Finish!");
                         }
                     } else {
@@ -142,7 +141,6 @@ public class TypeQuizFragment extends Fragment {
                 }
             }
         });
-
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,12 +154,12 @@ public class TypeQuizFragment extends Fragment {
                     answered = false;
                 }
                 else {
-                    if (correct == qs.size()) {
-                        MainActivity.completed[0] = 1;
-                    }
-                    else {
-                        MainActivity.completed[0] = 2;
-                    }
+                if (correct == qs.size()) {
+                    MainActivity.completed[1] = 1;
+                }
+                else {
+                    MainActivity.completed[1] = 2;
+                }
                     getFragmentManager().beginTransaction()
                             .replace(R.id.canvas, new LessonFragment())
                             .commit();

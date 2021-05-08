@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ChooseFragment.ChooseFragmentListener, CreateTeamFragment.CreateTeamFragmentListener {
+    public static int[] completed = {0, 0};
     private CreateTeamFragment teamFragment;
     private ChooseFragment chooseFragment;
 

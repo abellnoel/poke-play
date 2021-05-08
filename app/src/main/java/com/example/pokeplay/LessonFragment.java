@@ -1,5 +1,6 @@
 package com.example.pokeplay;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -46,6 +47,29 @@ public class LessonFragment extends Fragment {
             }
         });
 
+        v.findViewById(R.id.textViewAbility).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction()
+                        //.addToBackStack("Lessons")
+                        .replace(R.id.canvas, new AbilityFragment())
+                        .commit();
+            }
+        });
+
+        //Saving progress
+        if (MainActivity.completed[0] == 1) {
+            v.findViewById(R.id.textViewType).setBackgroundColor(Color.GREEN);
+        }
+        if (MainActivity.completed[1] == 1) {
+            v.findViewById(R.id.textViewAbility).setBackgroundColor(Color.GREEN);
+        }
+        if (MainActivity.completed[0] == 2) {
+            v.findViewById(R.id.textViewType).setBackgroundColor(Color.RED);
+        }
+        if (MainActivity.completed[1] == 2) {
+            v.findViewById(R.id.textViewAbility).setBackgroundColor(Color.RED);
+        }
         return v;
     }
 }
