@@ -20,6 +20,7 @@ public class TypeQuizFragment extends Fragment {
     Button a, b, c, d, next;
     int correct = 0;
     boolean answered = false;
+    int tries = 0;
 
     public TypeQuizFragment() {
         // Required empty public constructor
@@ -69,6 +70,7 @@ public class TypeQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.a) {
                         next.setVisibility(View.VISIBLE);
                         a.setBackgroundColor(Color.GREEN);
@@ -88,6 +90,7 @@ public class TypeQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.b) {
                         next.setVisibility(View.VISIBLE);
                         b.setBackgroundColor(Color.GREEN);
@@ -108,6 +111,7 @@ public class TypeQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.c) {
                         next.setVisibility(View.VISIBLE);
                         c.setBackgroundColor(Color.GREEN);
@@ -128,6 +132,7 @@ public class TypeQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.d) {
                         d.setBackgroundColor(Color.GREEN);
                         next.setVisibility(View.VISIBLE);
@@ -159,7 +164,7 @@ public class TypeQuizFragment extends Fragment {
                     if (correct == qs.size()) {
                         MainActivity.completed[0] = 1;
                     }
-                    else {
+                    if (tries > 5) {
                         MainActivity.completed[0] = 2;
                     }
                     getFragmentManager().beginTransaction()

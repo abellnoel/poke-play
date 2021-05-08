@@ -20,6 +20,7 @@ public class AbilityQuizFragment extends Fragment {
     Button a, b, c, d, next;
     int correct = 0;
     boolean answered = false;
+    int tries = 0;
 
     public AbilityQuizFragment() {
         // Required empty public constructor
@@ -39,8 +40,8 @@ public class AbilityQuizFragment extends Fragment {
 
         //create questions
         ArrayList<Question> qs = new ArrayList<>();
-        Question q1 = new Question("Which dawdawda", "Water", "Grass","Electric", "Ground", 1);
-        Question q2 = new Question("Which type beloawdwadive against?", "Water", "Electric","Grass", "Fire", 1);
+        Question q1 = new Question("What is a reactive ability?", "An ability to counter intimidate.", "An ability that activates after certain conditions are met."," An ability that isnt revealed to your opponent.", "An ability that gives you an attack boost.\n", 1);
+        Question q2 = new Question("What is a Same Type Attack Bonus (STAB)?", "A boost to a move if the Pokemon has the same typing", "An active Ability","A weapon item", "A passive ability\n", 0);
         qs.add(q1);
         qs.add(q2);
 
@@ -68,6 +69,7 @@ public class AbilityQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.a) {
                         next.setVisibility(View.VISIBLE);
                         a.setBackgroundColor(Color.GREEN);
@@ -87,6 +89,7 @@ public class AbilityQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.b) {
                         next.setVisibility(View.VISIBLE);
                         b.setBackgroundColor(Color.GREEN);
@@ -107,6 +110,7 @@ public class AbilityQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.c) {
                         next.setVisibility(View.VISIBLE);
                         c.setBackgroundColor(Color.GREEN);
@@ -127,6 +131,7 @@ public class AbilityQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!answered) {
+                    tries++;
                     if (finalCorrectID[0] == R.id.d) {
                         d.setBackgroundColor(Color.GREEN);
                         next.setVisibility(View.VISIBLE);
@@ -157,7 +162,7 @@ public class AbilityQuizFragment extends Fragment {
                 if (correct == qs.size()) {
                     MainActivity.completed[1] = 1;
                 }
-                else {
+                if (tries > 5) {
                     MainActivity.completed[1] = 2;
                 }
                     getFragmentManager().beginTransaction()
