@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#288cd4</color>
     <color name="buttonBackground">#0F64A1</color>
+    <color name="buttonCorrect">#D24AAA4E</color>
+    <color name="buttonIncorrect">#AA4444</color>
     <color name="buttonText">#D1D8DF</color>
     <color name="topbar">#0F64A1</color>
     <color name="Headers">#FFFFFF</color>

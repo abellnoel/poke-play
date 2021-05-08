@@ -40,7 +40,7 @@ public class LessonFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction()
-                        .addToBackStack("Lessons")
+                        //.addToBackStack("Lessons")
                         .replace(R.id.canvas, new TypeFragment())
                         .commit();
             }

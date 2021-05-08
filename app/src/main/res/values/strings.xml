@@ -5,13 +5,20 @@
     <string name="online">TEAM</string>
     <string name="options">OPTIONS</string>
 
-    <string name="lesson_type1">Welcome to Type Dynamics, this lesson will take every Pokemon Typing and show you how they all interact amongst each other. We will discuss dual typings, move typings, immunities, super-effective and not very effective attacks.\n\nIn Pokemon Battles Type understanding and memorization are key to knowing how moves will interact with your Pokemon and your opponents Pokemon. Let\'s Get Started!</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lesson_type1">Welcome to Type Dynamics.
+        <br /><br />Here you will understand pokemon single and dual typing and how they affect a team. Pokemon moves also have types and here you will find out choosing attacking moves are not always straightforward.
+        <br /><br />Let’s Get Started!</string>
+    <string name="lesson_type2">The basic type practice involves is Grass, Water, and Fire. I simple two-way cycle, grass is super effective (SE) against water which is SE against fire and fire is SE against grass. There are 18 Pokemon typing and 171 type combinations, luckily you don’t have to remember all the interactions between them, only the basics and from there you can build and rationalize what Pokemon will have type advantage on the surface.</string>
+    <string name="lesson_type3">Pokemon interactions with moves boil down to weaknesses and resistances. As mentioned, grass is SE against water, that means water has a 2X weakness to Grass. By pure design grass has a 2X resistance to water meaning it is not very effective (NE). NOT all typing interactions work so uniformly, and that is why knowing the basic single type interactions is both important and helpful. Type effectiveness are categorized into 4 labels; No effect (0), Not very effective (NE), Normal effective (1) and Super effective (SE).
+    </string>
+    <string name="lesson_type4">Values for NE and SE vary depending on dual typings of the Pokemon and certain status moves that cause Pokemon to gain new typings. Here you will learn up to dual typings which reach a max of 4X weakness and 4X resistances.</string>
+    <string name="lesson_type5">The easiest and most convenient type interactions to remember are the No effect ones, because no matter the dual typing if this pokemon is hit with a move that has No effect on any of its both typings it will remain as No effect. Here are the No effect interactions: Ghost has no effect on Normal, Normal has no effect on Ghost, Psychic has no effect on Dark and Dragon has No effect on Fairy.</string>
     <string name="team_builder">Team Builder</string>
     <string name="create_new_team">Create New Team</string>
     <string name="new_team">New Team</string>
     <string name="create">Create</string>
     <string name="select_pokemon">Select Pokemon</string>
     <string name="choose">Choose!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
